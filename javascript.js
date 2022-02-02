@@ -9,5 +9,12 @@ const hellos = document.getElementsByClassName("hello");
 for(const i of hellos){
     i.innerText = "Got you!" ;
 }
-debugger;
+
 const find = document.querySelectorAll(".find-hello h2");
+
+function h1mouseOver(){
+    h1Title.style.fontSize = "40px";
+}
+
+h1Title.addEventListener("click",()=>alert("bow!"));
+h1Title.addEventListener("mouseover",h1mouseOver);
