@@ -1,18 +1,35 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const loginH1 = document.querySelector("#loginH1");
+
+const HIDDEN_CLASSNAME = "hidden";
+
+
+function paintGreeting(userName){
+    loginH1.innerHTML = `Hello! ${userName}`;     
+}
+
+//localStorage.getItem('userName') 값이 없으면 toggle
+const storageUserName = localStorage.getItem('userName');
+
+if(storageUserName !== null){
+    loginForm.classList.toggle(HIDDEN_CLASSNAME);
+    loginH1.classList.toggle(HIDDEN_CLASSNAME);
+    paintGreeting(storageUserName);    
+}
 
 
 function onLoginSumbit(event){
     event.preventDefault();
     console.log(event);
-    const inputValue = loginInput.value;
-    console.log("hello", loginInput.value);
-    
+    const userName = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    loginH1.classList.remove(HIDDEN_CLASSNAME);
+    paintGreeting(userName);    
+    localStorage.setItem('userName', userName);
 }
 
 loginForm.addEventListener("submit", onLoginSumbit);
-
-
 
 
 

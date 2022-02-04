@@ -10,3 +10,7 @@
 .h1-style {
   font-family: "Courier New", Courier, monospace;
 } */
+
+.hidden {
+  display: none;
+}
