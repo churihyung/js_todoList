@@ -9,8 +9,7 @@ function setClock(){
     clockYear.innerText = `${date.getFullYear()}년 ${date.getMonth()+1}월 ${date.getDate()}일`;
     clockTime.innerText = `${hours}:${minutes}:${second}`;
 }
+
 setClock();
 setInterval(setClock,1000);
 
-
-// console.log(date.toLocaleString());
