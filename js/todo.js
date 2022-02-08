@@ -19,7 +19,6 @@ function delTodoList(event){
     const delLi = event.target.parentElement;
     const delId = delLi.id;
     //id가지고 todos 값 지우고 localStorage에 재저장
-    debugger;
     todos = todos.filter((element)=>String(element.id) !== delId);
     localStorage.setItem("todos",JSON.stringify(todos));
 
@@ -48,7 +47,6 @@ function addTodoList(newTodoObj){
 const storageTodos = localStorage.getItem('todos');
 
 if(storageTodos !== null){
-    console.log( JSON.parse(storageTodos))
     todos = JSON.parse(storageTodos);
     loadTodos();
 }
